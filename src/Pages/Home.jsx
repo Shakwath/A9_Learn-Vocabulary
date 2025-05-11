@@ -3,6 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import Banner from '../Components/Banner';
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 // Testimonials array
 const testimonials = [
@@ -25,6 +29,9 @@ const testimonials = [
 
 const Home = () => {
   const categories = useLoaderData();
+  useEffect(() => {
+  AOS.init({ duration: 1000 });
+  }, []);
 
   // Example: dynamic tutorial count
   const tutorialCount = categories?.length || 0;

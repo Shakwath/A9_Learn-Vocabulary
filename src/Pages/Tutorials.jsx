@@ -10,50 +10,32 @@ const Tutorials = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         <div className="card card-border video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/XC62pWvw4b0"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/N9Yo-htlGU4?si=TFnOl7gUMJ87h7tM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/X1mC1XY65Kc"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/uxmYgJEtA-A?si=RWlg-GYsTqfEiq7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/D1aVVfBsA5s"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/NQZYL39JEFo?si=bCGDZ0CAO46eneM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+         </iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/0bHhSc6TcqQ"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/fD6a-b--cu8?si=NaCYNzNw8O817Mdx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/rpoDr2LrXms"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/VB0aIzMd-6k?si=Lb20FYogvxe1UX3i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+         </iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/Fmj8NUs_2Hg"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/AfBOIEROBI8?si=ZwDGQzg5FVKnwF6S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
         </div>
       </div>
       <div className="flex justify-center">
-        <Link to="/start-learning" className="btn btn-primary mt-4">
+        <Link to="/startlearning" className="btn btn-primary mt-4">
           Start Lesson
         </Link>
       </div>
