@@ -6,7 +6,7 @@ import CountUp from "react-countup";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
+import 'animate.css';
 
 // Testimonials array
 const testimonials = [
@@ -44,7 +44,7 @@ const Home = () => {
       {/* Our Mission */}
       <section className="bg-sky-50 py-12 md:py-24 mt-6 rounded-xl shadow-md border border-blue-100">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-blue-800 mb-4">Our Mission</h2>
+          <h2 className="text-4xl font-bold text-blue-800 mb-4 animate__animated animate__bounce">Our Mission</h2>
           <p className="text-lg text-gray-600 mb-10">
             We’re on a mission to make language learning simple, enjoyable, and truly interactive. Through our intuitive platform, learners of all levels can build vocabulary confidently—anytime, anywhere.
           </p>
@@ -76,7 +76,7 @@ const Home = () => {
           </div>
 
           <div className="mt-10">
-            <Link to="/start-learning">
+            <Link to="/startlearning">
               <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-lg">
                 Start Learning Now
               </button>

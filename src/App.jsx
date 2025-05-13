@@ -1,11 +1,13 @@
-import React from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
-const App = () => {
+function App() {
   return (
-    <div>
-     
-    </div>
+    <>
+      {/* Your Routes and Layout */}
+      <Toaster position="top-center" reverseOrder={false} />
+      <ToastContainer />
+    </>
   );
-};
-
-export default App;
+}

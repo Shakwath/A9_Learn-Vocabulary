@@ -1,6 +1,6 @@
 import React from 'react';
 
-const register = () => {
+const VocabularyDetails = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const register = () => {
     );
 };
 
-export default register;
+export default VocabularyDetails;
