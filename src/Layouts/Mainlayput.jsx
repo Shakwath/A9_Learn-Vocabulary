@@ -1,14 +1,13 @@
+import React, { useContext, useEffect } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
 import Navbar from '../Components/Navbar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Components/Footer';
-import React, { useContext, useEffect } from "react";
-import { AuthContext } from "../contexts/AuthProvider";
 import toast from "react-hot-toast";
 
-
 const Mainlayput = () => {
-
-     const { user } = useContext(AuthContext);
+  // Safely destructure user from AuthContext
+  const { user } = useContext(AuthContext) || {}; 
 
   useEffect(() => {
     if (user) {
@@ -26,18 +25,17 @@ const Mainlayput = () => {
     }
   }, [user]);
 
-    return (
-        <div className='mx-w-4xl mx-auto'>
-            {/* Navbar */}
-            <Navbar></Navbar>
-            <div className='min-h-[calc(100vh-232px)] py-12'>
-            <Outlet></Outlet>
-            </div>
-           
-            {/* Footer */}
-           <Footer></Footer>
-        </div>
-    );
+  return (
+    <div className="mx-w-4xl mx-auto">
+      {/* Navbar */}
+      <Navbar />
+      <div className="min-h-[calc(100vh-232px)] py-12">
+        <Outlet />
+      </div>
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
 };
 
 export default Mainlayput;

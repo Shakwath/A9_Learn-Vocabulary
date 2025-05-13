@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useContext } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import signinIcon from "../assets/signinIcon.png";
@@ -15,16 +16,18 @@ export default function Login() {
   const [signupPhotoUrl, setSignupPhotoUrl] = useState("");
   const authContext = useContext(AuthContext); // Get authentication context
   const { googleLogin, signInUser } = useContext(AuthContext);
+
   const location = useLocation(); // Get the current location
   const navigate = useNavigate(); // Get the navigate function
 
-  const clickToLogin = () => {
-    setLogin(true);
-  };
+  // const clickToLogin = () => {
+  //   setLogin(true);
+  // };
 
-  const clickToSignup = () => {
-    setLogin(false);
-  };
+  // const clickToSignup = () => {
+  //   setLogin(false);
+  // };
+  
 
   const handleGoogleLogin = async () => {
     await googleLogin(); // Wait for Google login to complete
@@ -61,15 +64,22 @@ export default function Login() {
     }
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await signInUser(e.target.email.value, e.target.password.value); // Attempt to sign in
-      navigate(location?.state?.from?.pathname || "/"); // Navigate only on success
-    } catch (error) {
-      toast("Login Failed");
-    }
-  };
+ const handleLogin = async (e) => {
+  e.preventDefault();
+
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  try {
+    await signInUser(email, password);
+    toast.success("Login successful!");
+    navigate(location?.state?.from?.pathname || "/");
+  } catch (error) {
+    console.error("Login failed:", error.message);
+    toast.error(error.message || "Login failed. Please try again.");
+  }
+};
+
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -93,7 +103,9 @@ export default function Login() {
       {!login && (
         <div className="signup-area flex items-center justify-center my-11">
           <div className="card bg-base-100 w-full px-4 py-10 max-w-sm shrink-0 shadow-2xl">
-            <iframe src="https://lottie.host/embed/7ef54e79-d507-4742-bc3e-f74354262fa3/AE2csfvfUB.json"></iframe>
+            <iframe
+            src="https://lottie.host/embed/7ef54e79-d507-4742-bc3e-f74354262fa3/AE2csfvfUB.json"
+            className="w-60 h-60 mx-auto"/>
             <form className="card-body p-0" onSubmit={handleSignup}>
               <div className="form-control">
                 <label className="label">

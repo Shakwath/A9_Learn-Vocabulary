@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import VocabularyCard from "../components/VocabularyCard"; // Import the VocabularyCard component
+import VocabularyCard from "../components/VocabularyCard";
 
 export default function Lesson() {
   const { id } = useParams();
@@ -10,18 +10,25 @@ export default function Lesson() {
     const fetchVocabulary = async () => {
       try {
         const response = await fetch(
-          "https://raw.githubusercontent.com/mozaddedalfeshani/bslphotos/refs/heads/main/learnwithvocabularies.json"
+          "https://raw.githubusercontent.com/Shakwath/learnwithvocabularies/main/learnvocabularies.json"
         );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
         const data = await response.json();
         const lesson = data.lessons.find(
           (lesson) => lesson.lesson_no === parseInt(id)
         );
+
         if (lesson) {
           setLessonData(lesson);
         } else {
           setLessonData("Lesson not found");
         }
       } catch (error) {
+        console.error("Error fetching data:", error);
         setLessonData("Failed to fetch lesson data");
       }
     };
@@ -42,7 +49,7 @@ export default function Lesson() {
       <h1 className="text-center font-bold text-xl">
         {lessonData.lesson_title}
       </h1>
-      <p className="text-center font-bold text-xxl">
+      <p className="text-center font-bold text-lg">
         {lessonData.lesson_description}
       </p>
 

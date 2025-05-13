@@ -40,14 +40,6 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  // const createAccount = (email, password, displayName, photoURL) => {
-  //   createUserWithEmailAndPassword(getAuth(app), email, password).then(
-  //     (userCredential) => {
-  //       updateUserProfile(displayName, photoURL);
-  //       notify("Account created successfully"); // Notify on successful account creation
-  //     }
-  //   );
-  // };
 
   const createAccount = (email, password, displayName, photoURL) => {
     return createUserWithEmailAndPassword(getAuth(app), email, password)

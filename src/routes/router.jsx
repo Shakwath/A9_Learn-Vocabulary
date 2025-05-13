@@ -63,14 +63,7 @@ const router = createBrowserRouter([
           </PrivateProvider>
         ),
       },
-    //   {
-    //     path: "/profileEdit",
-    //     element: (
-    //       <PrivateProvider>
-    //         <UpdateProfile />
-    //       </PrivateProvider>
-    //     ),
-    //   },
+   
        ],
     },
 ]);
